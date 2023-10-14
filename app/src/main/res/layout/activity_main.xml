@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:padding="16dp">
+
+    <!-- TextView "Input Rencana Perjalanan" -->
+    <TextView
+        android:id="@+id/textViewInputRencana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Rencana Perjalanan"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <!-- Spinner Asal -->
+    <Spinner
+        android:id="@+id/spinnerAsal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewInputRencana"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:hint="Pilih Asal"
+        android:background="@drawable/button_shape" />
+
+    <!-- Spinner Tujuan -->
+    <Spinner
+        android:id="@+id/spinnerTujuan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerAsal"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:hint="Pilih Tujuan"
+        android:background="@android:drawable/btn_dropdown" />
+
+    <!-- Spinner Class Kereta -->
+    <Spinner
+        android:id="@+id/spinnerClassKereta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerTujuan"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:hint="Pilih Class Kereta"
+        android:background="@android:drawable/btn_dropdown" />
+
+    <!-- HorizontalScrollView untuk Pilihan Toggle Button -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollViewPaket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerClassKereta"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:id="@+id/llToggleButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Toggle Buttons (Contoh 7 Toggle Buttons) -->
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 1" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 2" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 3" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 4" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 5" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 6" />
+
+            <ToggleButton
+                android:id="@+id/toggleButtonPaket7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paket 7" />
+            <!-- ... Tambahkan Toggle Buttons paket tambahan lainnya sesuai kebutuhan -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- TextView untuk Menampilkan Harga -->
+    <TextView
+        android:id="@+id/textViewHarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontalScrollViewPaket"
+        android:layout_marginTop="16dp"
+        android:text="Harga: -"
+        android:textSize="16sp" />
+
+    <!-- Button Pesan yang Mengarah ke Dashboard -->
+    <Button
+        android:id="@+id/btnPesan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pesan"
+        android:layout_below="@+id/textViewHarga"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <!-- TextView "Hai" -->
+    <TextView
+        android:id="@+id/textViewHai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="28dp"
+        android:text="Hi Clarencce,"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppinsregular"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/title"/>
+
+    <!-- Icon lonceng -->
+    <ImageView
+        android:id="@+id/imageViewBell"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="25dp"
+        android:paddingRight="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_notifications_none_24"
+        tools:ignore="MissingConstraints" /> <!-- Untuk memberikan jarak antara TextView "Akhsan" dan ikon lonceng -->
+
+    <TextView
+        android:id="@+id/jumlahuang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="28dp"
+        android:text="5,000.00"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/title"
+        android:fontFamily="@font/poppinsbold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHai"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTambahPesan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pesan Tiket"
+        android:textAllCaps="false"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_below="@+id/jumlahuang"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:textColor="@color/title"
+        android:background="@drawable/button_shape_v2"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="@+id/jumlahuang"
+        app:layout_constraintTop_toTopOf="@+id/jumlahuang"/>
+
+    <CalendarView
+        android:id="@+id/date_Picker"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_centerHorizontal="true"
+        android:calendarViewShown="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/timedate_shape"
+        android:elevation="8dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="@+id/btnTambahPesan"
+        app:layout_constraintTop_toTopOf="@+id/btnTambahPesan"/>
+
+    <TextView
+        android:id="@+id/textViewRencanaPerjalanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Rencana Perjalanan"
+        android:textSize="20sp"
+        android:layout_marginStart="28dp"
+        android:textColor="@color/title"
+        android:fontFamily="@font/poppinsbold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_Picker"/>
+
+    <!-- TextView untuk menampilkan data terakhir rencana perjalanan -->
+    <RelativeLayout
+        android:id="@+id/lastTravelDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRencanaPerjalanan">
+
+        <!-- Border untuk TextView -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_v2"
+            android:padding="8dp">
+
+            <!-- TextView untuk menampilkan data terakhir rencana perjalanan -->
+            <TextView
+                android:id="@+id/lastTravelData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data terakhir: [Tanggal, Asal, Tujuan, Paket]"
+                android:textColor="@color/title"
+                android:fontFamily="@font/poppinsregular"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

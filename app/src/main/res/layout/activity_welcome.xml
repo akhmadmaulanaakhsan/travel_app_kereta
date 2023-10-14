@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/kai_acces_logov2"
+        android:layout_alignParentTop="true"
+        android:id="@+id/logokaiacces"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/GetKai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get things done with KAI Acess"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_below="@+id/logokaiacces"
+        android:layout_marginTop="80dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppinsbold"
+        android:textColor="@color/title"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/Tagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="38dp"
+        android:layout_below="@+id/GetKai"
+        android:layout_marginTop="40dp"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:fontFamily="@font/poppinsmedium"
+        android:textColor="@color/title"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRegister1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Started"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_below="@+id/Tagar"
+        android:textAllCaps="false"
+        android:layout_marginTop="80dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:background="@drawable/button_shape_v2"
+        android:textColor="@color/title"
+
+        />
+
+</RelativeLayout>
