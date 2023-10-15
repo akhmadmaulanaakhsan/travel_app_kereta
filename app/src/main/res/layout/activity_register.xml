@@ -209,7 +209,9 @@
             android:fontFamily="@font/poppinsregular"
             android:layout_below="@+id/btnRegister"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/primary"/>
+            android:textColor="@color/primary"
+            android:clickable="true"
+            android:onClick="goToLoginActivity"/>
 
     </LinearLayout>
 

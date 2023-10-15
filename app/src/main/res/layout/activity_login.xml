@@ -154,7 +154,9 @@
             android:fontFamily="@font/poppinsregular"
             android:layout_below="@+id/btnLogin"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/primary"/>
+            android:textColor="@color/primary"
+            android:clickable="true"
+            android:onClick="goToRegisterActivity"/>
 
     </LinearLayout>
 
