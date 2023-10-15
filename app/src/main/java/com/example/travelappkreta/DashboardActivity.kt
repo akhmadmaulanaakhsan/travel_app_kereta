@@ -38,21 +38,6 @@ class DashboardActivity : AppCompatActivity() {
             updateLastTravelData(selectedDate)
         }
 
-        // Mendapatkan data dari Intent
-        val asal = intent.getStringExtra("ASAL")
-        val tujuan = intent.getStringExtra("TUJUAN")
-        val kelasKereta = intent.getStringExtra("KELAS_KERETA")
-        val selectedDate = intent.getStringExtra("SELECTED_DATE")
-        val totalHarga = intent.getIntExtra("TOTAL_HARGA", 0)
-
-        // Gunakan data sesuai kebutuhan Anda
-        // ...
-
-        // Contoh tampilan data pada TextView
-        val textViewData = findViewById<TextView>(R.id.textViewData)
-        textViewData.text = "Asal: $asal\nTujuan: $tujuan\nKelas Kereta: $kelasKereta\nTanggal: $selectedDate\nTotal Harga: $totalHarga"
-    }
-
 
     }
 
