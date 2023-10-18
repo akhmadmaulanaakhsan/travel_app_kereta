@@ -40,11 +40,10 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid login credentials.", Toast.LENGTH_SHORT).show()
             return false
         }
+    }
 
-
-        fun goToRegisterActivity(view: View) {
-            startActivity(Intent(this, RegisterActivity::class.java))
-            finish()
-        }
+    fun goToRegisterActivity(view: View) {
+        startActivity(Intent(this, RegisterActivity::class.java))
+        finish()
     }
 }
