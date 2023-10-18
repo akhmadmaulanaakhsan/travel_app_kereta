@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             if (isLoginValid()) {
-                startActivity(Intent(this, RegisterActivity::class.java))
+                startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
             }
         }
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         fun goToRegisterActivity(view: View) {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, RegisterActivity::class.java))
             finish()
         }
     }

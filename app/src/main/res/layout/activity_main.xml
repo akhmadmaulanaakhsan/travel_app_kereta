@@ -55,7 +55,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:hint="Pilih Asal" />
+                android:hint="Pilih Asal"
+                android:textColor="@color/title"/>
 
             <!-- Spinner Tujuan -->
             <Spinner
@@ -68,7 +69,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:hint="Pilih Tujuan"/>
+                android:hint="Pilih Tujuan"
+                android:textColor="@color/title"/>
 
             <!-- Spinner Class Kereta -->
             <Spinner
@@ -81,7 +83,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
-                android:hint="Pilih Class Kereta" />
+                android:hint="Pilih Class Kereta"
+                android:textColor="@color/title"/>
 
             <!-- HorizontalScrollView untuk Pilihan Toggle Button -->
             <HorizontalScrollView

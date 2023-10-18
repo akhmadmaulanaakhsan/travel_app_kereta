@@ -10,20 +10,20 @@ data class PaketTambahan(val nama: String, val deskripsi: String)
 
 class InputRencanaPerjalananActivity : AppCompatActivity() {
 
-    private val stasiunList = listOf("Stasiun Jakarta", "Stasiun Bandung", "Stasiun Surabaya")
+    private val stasiunList = listOf("Stasiun Jakarta", "Stasiun Bandung", "Stasiun Pekalongan", "Stasiun Semarang", "Stasiun Blitar", "Stasiun Surabaya")
     private val kelasKeretaList = listOf("Ekonomi", "Bisnis", "Eksekutif")
     private val paketTambahanList = listOf(
-        PaketTambahan("Paket 1", "Deskripsi Paket 1"),
-        PaketTambahan("Paket 2", "Deskripsi Paket 2"),
-        PaketTambahan("Paket 3", "Deskripsi Paket 3"),
-        PaketTambahan("Paket 4", "Deskripsi Paket 4"),
-        PaketTambahan("Paket 5", "Deskripsi Paket 5"),
-        PaketTambahan("Paket 6", "Deskripsi Paket 6"),
-        PaketTambahan("Paket 7", "Deskripsi Paket 7")
+        PaketTambahan("Paket 1", "tambah makan siang"),
+        PaketTambahan("Paket 2", "duduk di pinggir jendela"),
+        PaketTambahan("Paket 3", "bantuan penanganan bagasi"),
+        PaketTambahan("Paket 4", "wifi dengan kecepatan stabil"),
+        PaketTambahan("Paket 5", "bantal leher, selimut hangat, dan penutup mata"),
+        PaketTambahan("Paket 6", "layanan spa kecil seperti pijat atau perawatan wajah di dalam kereta"),
+        PaketTambahan("Paket 7", "merchandise eksklusif kaos dan topi")
     )
 
-    private val hargaKelasKeretaList = listOf(100, 150, 200)
-    private val hargaPaketTambahanList = listOf(10, 15, 20, 25, 30, 35, 40)
+    private val hargaKelasKeretaList = listOf(100000, 180000, 250000)
+    private val hargaPaketTambahanList = listOf(30000, 30000, 40000, 20000, 40000, 50000, 90000)
 
     private lateinit var spinnerAsal: Spinner
     private lateinit var spinnerTujuan: Spinner
@@ -159,6 +159,4 @@ class InputRencanaPerjalananActivity : AppCompatActivity() {
             // Do nothing
         }
     }
-
-
 }

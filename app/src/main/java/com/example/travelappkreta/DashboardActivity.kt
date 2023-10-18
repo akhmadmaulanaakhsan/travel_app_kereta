@@ -1,11 +1,16 @@
 package com.example.travelappkreta
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.CalendarView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.travelappkreta.InputRencanaPerjalananActivity
+import com.example.travelappkreta.R
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -37,13 +42,45 @@ class DashboardActivity : AppCompatActivity() {
             val selectedDate = "$dayOfMonth/${month + 1}/$year"
             updateLastTravelData(selectedDate)
         }
-
-
     }
 
     private fun updateLastTravelData(selectedDate: String) {
-        // Di sini, Anda dapat mengambil dan menampilkan data perjalanan terakhir berdasarkan tanggal
-        // Contoh: lastTravelData.text = "Data terakhir: [Tanggal, Asal, Tujuan, Paket]"
-        // Gantilah dengan logika pengambilan data yang sesuai dengan proyek Anda.
+        // Ambil data dari SharedPreferences
+        val lastTravelInfo = getLastTravelData(selectedDate)
+
+        // Tampilkan data terakhir di TextView
+        lastTravelData.text = lastTravelInfo
+
+        // Tampilkan Toast apakah terdapat rencana perjalanan pada tanggal yang dipilih
+        val isTravelPlanExist = checkIfTravelPlanExist(selectedDate)
+        val toastMessage = if (isTravelPlanExist) {
+            "Terdapat rencana perjalanan pada tanggal $selectedDate"
+        } else {
+            "Tidak terdapat rencana perjalanan pada tanggal $selectedDate"
+        }
+        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun getLastTravelData(selectedDate: String): String {
+        val sharedPreferences = getSharedPreferences("TravelData", Context.MODE_PRIVATE)
+        val date = sharedPreferences.getString("SELECTED_DATE_$selectedDate", "")
+        val origin = sharedPreferences.getString("ORIGIN_$selectedDate", "")
+        val destination = sharedPreferences.getString("DESTINATION_$selectedDate", "")
+        val packages = sharedPreferences.getString("PACKAGES_$selectedDate", "")
+
+        return "Data terakhir:\n" +
+                "Tanggal: $date\n" +
+                "Asal: $origin\n" +
+                "Tujuan: $destination\n" +
+                "Paket: $packages"
+    }
+
+    private fun checkIfTravelPlanExist(selectedDate: String): Boolean {
+        // Di sini, Anda dapat mengganti logika berdasarkan data yang Anda simpan
+        // Misalnya, jika menggunakan SharedPreferences, Anda dapat memeriksa apakah data tersedia pada tanggal tersebut.
+
+        val sharedPreferences = getSharedPreferences("TravelData", Context.MODE_PRIVATE)
+        return sharedPreferences.contains("SELECTED_DATE_$selectedDate")
     }
 }
+
