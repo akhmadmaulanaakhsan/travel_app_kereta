@@ -37,8 +37,6 @@ class DashboardActivity : AppCompatActivity() {
 
         // Set listener untuk CalendarView
         date_Picker.setOnDateChangeListener { _, year, month, dayOfMonth ->
-            // Di sini Anda dapat menangani perubahan tanggal yang dipilih oleh pengguna
-            // Misalnya, tampilkan data perjalanan terakhir berdasarkan tanggal yang dipilih
             val selectedDate = "$dayOfMonth/${month + 1}/$year"
             updateLastTravelData(selectedDate)
         }
@@ -76,8 +74,6 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun checkIfTravelPlanExist(selectedDate: String): Boolean {
-        // Di sini, Anda dapat mengganti logika berdasarkan data yang Anda simpan
-        // Misalnya, jika menggunakan SharedPreferences, Anda dapat memeriksa apakah data tersedia pada tanggal tersebut.
 
         val sharedPreferences = getSharedPreferences("TravelData", Context.MODE_PRIVATE)
         return sharedPreferences.contains("SELECTED_DATE_$selectedDate")

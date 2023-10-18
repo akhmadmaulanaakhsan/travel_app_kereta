@@ -1,5 +1,6 @@
 package com.example.travelappkreta
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -63,13 +64,14 @@ class InputRencanaPerjalananActivity : AppCompatActivity() {
         setupListeners()
 
         // Setup Button Pesan
-        // Setup Button Pesan
         btnPesan.setOnClickListener {
             // Mendapatkan data yang ingin Anda kirim
             val selectedAsal = spinnerAsal.selectedItem.toString()
             val selectedTujuan = spinnerTujuan.selectedItem.toString()
             val selectedClassKereta = spinnerClassKereta.selectedItem.toString()
             val selectedDate = "${datePicker.dayOfMonth}/${datePicker.month + 1}/${datePicker.year}"
+
+            saveTravelData(selectedDate, selectedAsal, selectedTujuan, textViewDetailPaket.text.toString())
 
             // Mengirim data ke DashboardActivity
             val intent = Intent(this, DashboardActivity::class.java).apply {
@@ -83,6 +85,18 @@ class InputRencanaPerjalananActivity : AppCompatActivity() {
             // Memulai aktivitas DashboardActivity dengan membawa data
             startActivity(intent)
         }
+    }
+
+    fun saveTravelData(selectedDate: String, origin: String, destination: String, packages: String) {
+        val sharedPreferences = getSharedPreferences("TravelData", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+
+        editor.putString("SELECTED_DATE_$selectedDate", selectedDate)
+        editor.putString("ORIGIN_$selectedDate", origin)
+        editor.putString("DESTINATION_$selectedDate", destination)
+        editor.putString("PACKAGES_$selectedDate", packages)
+
+        editor.apply()
     }
 
     private fun setupSpinner(spinner: Spinner, data: List<String>) {
