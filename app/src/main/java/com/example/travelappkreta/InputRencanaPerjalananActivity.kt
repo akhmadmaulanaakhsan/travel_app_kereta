@@ -170,7 +170,6 @@ class InputRencanaPerjalananActivity : AppCompatActivity() {
         }
 
         override fun onNothingSelected(parent: AdapterView<*>?) {
-            // Do nothing
         }
     }
 }
